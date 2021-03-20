@@ -16,3 +16,4 @@ Copyright (c) 2021, Andrew Abi-Mansour
  
 Project based on the 
 [Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 0.0.
+# mmic_cg
