@@ -3,35 +3,35 @@ Components in mmic_cg.
 """
 
 from typing import List, Tuple, Optional
-from mmic.components.blueprints.generic_component import GenericComponent
-from ..models import *
+from mmic.components.blueprints import StrategyComponent
+from ..models import CoarseInput, CoarseOutput
 
-__all__ = ["Component"]
+__all__ = ["CoarseComponent"]
 
 
-class Component(GenericComponent):
-    """ A sample component that defines the 3 required methods. """
+class CoarseComponent(StrategyComponent):
+    """A sample component that defines the 3 required methods."""
 
     @classmethod
     def input(cls):
-        return InputModel
+        return CoarseInput
 
     @classmethod
     def output(cls):
-        return OutputModel
+        return CoarseOutput
 
     def execute(
         self,
-        inputs: InputModel,
+        inputs: CoarseInput,
         extra_outfiles: Optional[List[str]] = None,
         extra_commands: Optional[List[str]] = None,
         scratch_name: Optional[str] = None,
         timeout: Optional[int] = None,
-    ) -> Tuple[bool, OutputModel]:
+    ) -> Tuple[bool, CoarseOutput]:
 
         # Convert input dictionary to model
         if isinstance(inputs, dict):
             inputs = self.input()(**inputs)
 
         # Populate kwargs from inputs
-        return True, OutputModel(**kwargs)
+        return True, self.output()(**kwargs)
