@@ -13,7 +13,7 @@ This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperabl
 
 # Basic Usage
 ```python
-# Import main component for running the computation
+# Import main component for coarse-graining
 from mmic_cg.components import CoarseComponent
 
 # Import a molecule model that complies with MMSchema
