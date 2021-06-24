@@ -1,1 +1,1 @@
-from .model import *
+from .proc import *
