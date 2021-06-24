@@ -23,12 +23,12 @@ import mmic_cg
 
 # -- Project information -----------------------------------------------------
 
-project = 'mmic_cg'
+project = "mmic_cg"
 copyright = (
     "2021, Andrew Abi-Mansour. Project structure based on the "
     "Computational Molecular Science Python Cookiecutter version 0.0"
 )
-author = 'Andrew Abi-Mansour'
+author = "Andrew Abi-Mansour"
 
 # The short X.Y version
 version = ""
