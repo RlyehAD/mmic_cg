@@ -14,7 +14,7 @@ This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperabl
 # Basic Usage
 ```python
 # Import main component for running the computation
-from mmic_cg import RunComponent
+from mmic_cg.components import CoarseComponent
 
 # Import a molecule model that complies with MMSchema
 from mmelemental.models import Molecule
@@ -25,14 +25,15 @@ mol = Molecule.from_file(path_to_file)
 # Create input for coarse-graining a molecule with protoMD
 cgIn = {
     "molecule": mol, 
-    "engine": "protoMD",
+    "method": "spacewarping",
     "keywords": {
-        "method": "spacewarping",
         "kmax": 1,
+        "polynomial": "legendre",
     },
 }
 
-cgOut = RunComponent.compute(cgInput)
+# Execute coarse-graining
+cgOut = CoarseComponent.compute(cgInput)
 
 # Extract MMSchema CG mol
 cgMol = cgOutput.mol
