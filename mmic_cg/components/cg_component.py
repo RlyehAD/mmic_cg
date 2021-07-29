@@ -2,7 +2,7 @@
 Components in mmic_cg.
 """
 
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Set
 
 # Import the generic i.e. starting component from MMIC
 from mmic.components.blueprints.generic_component import GenericComponent
@@ -23,23 +23,6 @@ class CoarseComponent(GenericComponent):
     @classmethod
     def output(cls):
         return CoarseOutput
-"""
-    def execute(
-        self,
-        inputs: CoarseInput,
-        extra_outfiles: Optional[List[str]] = None,
-        extra_commands: Optional[List[str]] = None,
-        scratch_name: Optional[str] = None,
-        timeout: Optional[int] = None,
-    ) -> Tuple[bool, CoarseOutput]:
-
-        # Convert input dictionary to model
-        if isinstance(inputs, dict):
-            inputs = self.input()(**inputs)
-
-        # Populate kwargs from inputs
-        return True, self.output()(**kwargs)
-"""
 
     @property
     def supported_comps(self) -> Set[str]:

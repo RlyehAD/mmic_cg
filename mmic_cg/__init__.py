@@ -4,8 +4,10 @@ A generic component for coarse-graining
 """
 
 # Add imports here
-from .mmic_mmic_cg import *
+#from .mmic_mmic_cg import *
 from . import models, components
+from .models import *
+from .components import *
 
 # Handle versioneer
 from ._version import get_versions

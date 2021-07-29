@@ -21,9 +21,6 @@ def test_mmic_cg_models():
     with open(mol_file, "r") as fp:
         mol = json.load(fp)
 
-    with open(ff_file, "r") as fp:
-        ff = json.load(fp)
-
     inputs = mmic_cg.CoarseInput(
         molecule={"mol": mol},
         schema_name="test",
