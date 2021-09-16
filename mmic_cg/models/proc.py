@@ -1,7 +1,8 @@
 """ Populate this file if your component requires its own models """
 
 from cmselemental.models import ProcInput, ProcOutput
-from mmelemental.models import Molecule, Ensemble
+from mmelemental.models import Molecule
+from mmelemental.models.collect import Ensemble
 from pydantic import Field
 from typing import Union, Optional, Dict, Any
 

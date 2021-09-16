@@ -26,6 +26,7 @@ def test_mmic_cg_models():
         schema_name="test",
         schema_version=1.0,
         method="spacewarping",
+        cg_options={"velocity": False, "force": False}
     )
 
     class CoarseDummyComponent(TacticComponent):
