@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest, ubuntu-latest]
+        os: [macOS-latest, ubuntu-latest, windows-latest]
         python-version: [3.9]
 
     steps:
@@ -60,7 +60,7 @@ jobs:
       shell: bash -l {0}
 
       run: |
-        pytest -v --cov=mmic_optim --cov-report=xml --color=yes mmic_optim/tests/
+        pytest -v --cov=mmic_cg --cov-report=xml --color=yes mmic_cg/tests/
     - name: CodeCov
       uses: codecov/codecov-action@v1
       with:
