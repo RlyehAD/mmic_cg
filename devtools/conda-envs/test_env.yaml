@@ -20,4 +20,5 @@ dependencies:
     - codecov
     - git+https://github.com/MolSSI/cmselemental@v0.2.0
     - git+https://github.com/RlyehAD/mmelemental
+    - git+https://github.com/RlyehAD/mm_data
     - git+https://github.com/MolSSI/mmic
