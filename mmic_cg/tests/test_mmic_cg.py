@@ -39,7 +39,7 @@ def test_mmic_cg_models():
             return mmic_cg.CoarseOutput
 
         @classmethod
-        def strategy_comp(cls):
+        def strategy_comps(cls):
             return mmic_cg.CoarseComponent
 
         @classmethod

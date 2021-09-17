@@ -5,7 +5,7 @@ Components in mmic_cg.
 from typing import List, Tuple, Optional, Set
 
 # Import the generic i.e. starting component from MMIC
-from mmic.components.blueprints.generic_component import GenericComponent
+from mmic.components.blueprints import GenericComponent
 
 #from mmic.components.blueprints import StrategyComponent
 from ..models import CoarseInput, CoarseOutput
