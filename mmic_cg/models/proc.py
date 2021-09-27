@@ -32,11 +32,6 @@ class CoarseInput(ProcInput):
 		description="The args used to specifi details in different cg method."
 		)
 
-	cg_options: Optional[Dict[str, bool]] = Field(
-		...,
-		description="Determines if velocities and forces are to be coarse-grained. Example {'velocities':True, 'forces':False}"
-		)
-
 class CoarseOutput(ProcOutput):
 	"""An output model for mmic_cg."""
 
