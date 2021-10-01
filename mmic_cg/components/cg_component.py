@@ -3,9 +3,8 @@ Components in mmic_cg.
 """
 
 from typing import List, Tuple, Optional, Set
-
-# Import the generic i.e. starting component from MMIC
-from mmic.components.blueprints import GenericComponent
+from cmselemental.util.decorators import classproperty
+from mmic.components.blueprints import StrategyComponent
 
 #from mmic.components.blueprints import StrategyComponent
 from ..models import InputCoarse, OutputCoarse
@@ -13,22 +12,22 @@ from ..models import InputCoarse, OutputCoarse
 __all__ = ["CoarseComponent"]
 
 
-class CoarseComponent(GenericComponent):
+class CoarseComponent(StrategyComponent):
     """A sample component that defines the 3 required methods."""
 
-    @classmethod
+    @classproperty
     def input(cls):
         return InputCoarse
 
-    @classmethod
+    @classproperty
     def output(cls):
         return OutputCoarse
 
-    @property
-    def supported_comps(self) -> Set[str]:
+    @classproperty
+    def tactic_comps(cls) -> Set[str]:
         """Returns the supported components e.g. set(['mmic_mda',...]).
         Returns
         -------
         Set[str]
         """
-        return set(["mmic_md_protomd"])
+        return {"mmic_md_protomd"}
