@@ -2,6 +2,7 @@
 import mmic_cg
 import pytest
 from mmic.components.blueprints import TacticComponent
+from cmselemental.util.decorators import classproperty
 import mm_data
 from typing import Tuple
 import sys
@@ -29,11 +30,11 @@ def test_mmic_cg_models():
     )
 
     class CoarseDummyComponent(TacticComponent):
-        @classmethod
+        @classproperty
         def input(cls):
             return mmic_cg.InputCoarse
 
-        @classmethod
+        @classproperty
         def output(cls):
             return mmic_cg.OutputCoarse
 
@@ -41,8 +42,8 @@ def test_mmic_cg_models():
         def strategy_comps(cls):
             return mmic_cg.CoarseComponent
 
-        @classmethod
-        def get_version(cls):
+        @classproperty
+        def version(cls):
             return None
 
         def execute(

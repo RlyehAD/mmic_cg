@@ -35,7 +35,7 @@ class InputCoarse(InputProc):
 class OutputCoarse(OutputProc):
 	"""An output model for mmic_cg."""
 
-	proc_input: CoarseInput = Field(
+	proc_input: InputCoarse = Field(
 		...,
 		description="Input schema used to compute cg variables"
 		)
