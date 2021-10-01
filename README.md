@@ -1,7 +1,7 @@
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/molssi-mint/mmic_cg/workflows/CI/badge.svg)](https://github.com/molssi-mint/mmic_cg/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/molssi-mint/mmic_cg/branch/main/graph/badge.svg)](https://codecov.io/gh/molssi-mint/mmic_cg/branch/main)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/molssi-mint/mmic_cg.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/molssi-mint/mmic_cg/context:python)
+[![GitHub Actions Build Status](https://github.com/molssi/mmic_cg/workflows/CI/badge.svg)](https://github.com/molssi/mmic_cg/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/molssi/mmic_cg/branch/main/graph/badge.svg)](https://codecov.io/gh/molssi/mmic_cg/branch/main)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/molssi-mint/mmic_cg.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/molssi/mmic_cg/context:python)
 
 Forcefield param assignment component
 ========================================
@@ -19,7 +19,7 @@ from mmic_cg.components import CoarseComponent
 # Import a molecule model that complies with MMSchema
 from mmelemental.models import Molecule
 
-# Create an MMSchema molecule
+# Create MMSchema molecule
 mol = Molecule.from_file(path_to_file)
 
 # Create input for coarse-graining a molecule with protoMD
