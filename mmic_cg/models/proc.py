@@ -1,15 +1,15 @@
 """ Populate this file if your component requires its own models """
 
-from cmselemental.models import ProcInput, ProcOutput
+from cmselemental.models import InputProc, OutputProc
 from mmelemental.models import Molecule
 from mmelemental.models.collect import Ensemble
 from pydantic import Field
 from typing import Union, Optional, Dict, Any
 
-__all__ = ["CoarseInput", "CoarseOutput"]
+__all__ = ["InputCoarse", "OutputCoarse"]
 
 
-class CoarseInput(ProcInput):
+class InputCoarse(InputProc):
 	"""An input model for mmic_cg."""
 
 	molecule: Optional[Dict[str, Molecule]] = Field(
@@ -32,7 +32,7 @@ class CoarseInput(ProcInput):
 		description="The args used to specifi details in different cg method."
 		)
 
-class CoarseOutput(ProcOutput):
+class OutputCoarse(OutputProc):
 	"""An output model for mmic_cg."""
 
 	proc_input: CoarseInput = Field(

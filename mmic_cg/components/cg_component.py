@@ -8,7 +8,7 @@ from typing import List, Tuple, Optional, Set
 from mmic.components.blueprints import GenericComponent
 
 #from mmic.components.blueprints import StrategyComponent
-from ..models import CoarseInput, CoarseOutput
+from ..models import InputCoarse, OutputCoarse
 
 __all__ = ["CoarseComponent"]
 
@@ -18,11 +18,11 @@ class CoarseComponent(GenericComponent):
 
     @classmethod
     def input(cls):
-        return CoarseInput
+        return InputCoarse
 
     @classmethod
     def output(cls):
-        return CoarseOutput
+        return OutputCoarse
 
     @property
     def supported_comps(self) -> Set[str]:

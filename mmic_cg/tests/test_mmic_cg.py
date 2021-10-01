@@ -21,7 +21,7 @@ def test_mmic_cg_models():
     with open(mol_file, "r") as fp:
         mol = json.load(fp)
 
-    inputs = mmic_cg.CoarseInput(
+    inputs = mmic_cg.InputCoarse(
         molecule={"mol": mol},
         schema_name="test",
         schema_version=1.0,
@@ -31,11 +31,11 @@ def test_mmic_cg_models():
     class CoarseDummyComponent(TacticComponent):
         @classmethod
         def input(cls):
-            return mmic_cg.CoarseInput
+            return mmic_cg.InputCoarse
 
         @classmethod
         def output(cls):
-            return mmic_cg.CoarseOutput
+            return mmic_cg.OutputCoarse
 
         @classmethod
         def strategy_comps(cls):
@@ -47,9 +47,9 @@ def test_mmic_cg_models():
 
         def execute(
             self,
-            inputs: mmic_cg.CoarseInput,
-        ) -> Tuple[bool, mmic_cg.CoarseOutput]:
+            inputs: mmic_cg.InputCoarse,
+        ) -> Tuple[bool, mmic_cg.OutputCoarse]:
 
-            return True, mmic_cg.CoarseOutput(proc_input=inputs, molecule=inputs.molecule, schema_name=inputs.schema_name, schema_version=inputs.schema_version, success=True)
+            return True, mmic_cg.OutputCoarse(proc_input=inputs, molecule=inputs.molecule, schema_name=inputs.schema_name, schema_version=inputs.schema_version, success=True)
 
     outputs = CoarseDummyComponent.compute(inputs)
